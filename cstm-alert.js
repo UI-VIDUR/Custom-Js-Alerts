@@ -6,19 +6,19 @@ var popupNode = document.createElement('div');
 popupNode.className = 'alertPopWrp';
 document.body.appendChild(popupNode);
 
-function cstmAlert(title, desc, alertCls){
+function cstmAlert(jsonData){
     var iconCls = '';
     
-    if(alertCls == 'success'){
+    if(jsonData.alertCls == 'success'){
         iconCls = "icon-check";
     }
-    if(alertCls == 'warning'){
+    if(jsonData.alertCls == 'warning'){
         iconCls = "icon-exclamation-triangle";
     }
-    if(alertCls == 'error'){
+    if(jsonData.alertCls == 'error'){
         iconCls = "icon-times";
     }
-    var appendHtml = '<div class="alertPopBg '+ alertCls +'"><i class="'+ iconCls +'"></i><h2 class="alertPopTitle">' + title + '</h2><p class="alertPopDesc">' + desc + '</p><a href="javascript:void(0);" class="alertPopClose" onclick="closePop();">Okay</a></div>';
+    var appendHtml = '<div class="alertPopBg '+ jsonData.alertCls +'"><i class="'+ iconCls +'"></i><h2 class="alertPopTitle">' + jsonData.title + '</h2><p class="alertPopDesc">' + jsonData.desc + '</p><a href="javascript:void(0);" class="alertPopClose" onclick="closePop();">Okay</a></div>';
     document.getElementsByClassName('alertPopWrp')[0].innerHTML = appendHtml;
     document.getElementsByClassName('alertPopWrp')[0].classList.add('openAlert');
 }
