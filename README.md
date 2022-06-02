@@ -4,7 +4,7 @@
 
 **1. title**
 
-**Type**: string
+**Type**: string <br>
 **Default**: "" (empty string)
 **Description**: can be used to set the title of the alert message popup
 
